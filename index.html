@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is my Portfolio Page" />
+    <meta name="keywords" content="Front-End, HTML, CSS" />
+    <meta name="author" content="Ahmed Nabel" />
+    <title>Ahmed Nabel</title>
+    <!-- to add icon to my title of the page -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><circle cx="32" cy="32" r="30" fill="%238A2BE2"/><text x="50%25" y="58%25" text-anchor="middle" font-size="36" font-family="Arial" font-weight="bold" fill="white">A</text></svg>'
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="scripts/src.js" defer></script>
+  </head>
+  <body>
+    <!-- Scroll Behavior -->
+    <div class="side-nav">
+      <div class="nav-dot active" data-target="landing"></div>
+      <div class="nav-dot" data-target="about"></div>
+      <div class="nav-dot" data-target="work"></div>
+      <div class="nav-dot" data-target="contact"></div>
+      <div class="vertical-line"></div>
+    </div>
+
+    <!-- Media Links -->
+    <div class="media-links">
+      <a
+        href="https://www.linkedin.com/in/ahmed-nabel-027717241/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="name"
+      >
+        <svg
+          class="icon"
+          width="24"
+          height="24"
+          fill="currentColor"
+          role="img"
+          aria-hidden="true"
+        >
+          <use href="assets/icons/icons.svg#icon-linkedin"></use>
+        </svg>
+      </a>
+      <a
+        href="https://github.com/ahmed-nabel"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="name"
+      >
+        <svg
+          class="icon"
+          width="24"
+          height="24"
+          fill="currentColor"
+          role="img"
+          aria-hidden="true"
+        >
+          <use href="assets/icons/icons.svg#icon-github"></use>
+        </svg>
+      </a>
+      <a
+        href="mailto:nabelahmed102@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="name"
+      >
+        <svg
+          class="icon"
+          width="24"
+          height="24"
+          fill="currentColor"
+          role="img"
+          aria-hidden="true"
+        >
+          <use href="assets/icons/icons.svg#icon-mail"></use>
+        </svg>
+      </a>
+      <div class="vertical-line"></div>
+    </div>
+
+    <!-- Header Start -->
+    <header id="header">
+      <div class="container-wrapper">
+        <div class="container">
+          <div class="myname">
+            <a href="#" class="nav-name">
+              <svg
+                class="logo-a"
+                width="50"
+                height="50"
+                viewBox="0 0 100 100"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g transform="translate(60,60)">
+                  <polygon
+                    class="hex-border"
+                    points="0,-40 34.6,-20 34.6,20 0,40 -34.6,20 -34.6,-20"
+                  />
+                  <text class="hex-text" x="0" y="6">A</text>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <nav>
+            <!-- SVG Hamburger -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <div class="list-container" id="sideMenu">
+              <button class="close-btn" id="closeBtn" aria-label="Close Menu">
+                &times;
+              </button>
+
+              <ul class="nav-links-list">
+                <li><a class="nav-link active" href="#about">About</a></li>
+                <li><a class="nav-link" href="#work">Portfolio</a></li>
+                <li>
+                  <a class="nav-link" id="contactBtn" href="#contact"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a class="btn-small contact" href="#contact">Say Hello</a>
+                </li>
+                <button
+                  id="theme-toggle"
+                  class="theme-toggle"
+                  aria-label="Toggle theme"
+                >
+                  <span id="theme-icon">🌙</span>
+                </button>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Main Page -->
+    <main>
+      <section id="landing">
+        <div class="container-wrapper">
+          <div class="container name-pop">
+            <div>
+              <h1>Hello, I'm Ahmed Nabel</h1>
+              <h2>A Passionate Front-End Developer</h2>
+            </div>
+
+            <a href="#contact" class="btn contact">Contact Me</a>
+          </div>
+        </div>
+      </section>
+      <!-- About Section Start -->
+      <section id="about">
+        <h2 class="section-heading">About Me</h2>
+        <div class="container-wrapper">
+          <div class="container">
+            <div class="about-me">
+              <p>
+                Hello, I'm<strong class="name"> Ahmed Nabel</strong> a
+                Passionate Front-End Developer.
+              </p>
+              <div class="tab-container">
+                <div class="tabs">
+                  <button class="tab active" data-tab="skills">Skills</button>
+                  <button class="tab" data-tab="highlights">Highlights</button>
+                  <button class="tab" data-tab="education">Education</button>
+                </div>
+
+                <div class="tab-content">
+                  <div class="tab-panel active" id="skills">
+                    <ul class="skills-list">
+                      <li>
+                        <svg
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <use href="assets/icons/icons.svg#icon-react"></use>
+                        </svg>
+                        React.js
+                      </li>
+                      <li>
+                        <svg
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <use href="assets/icons/icons.svg#icon-js"></use>
+                        </svg>
+                        JavaScript (ES6+)
+                      </li>
+                      <li>
+                        <svg
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <use
+                            href="assets/icons/icons.svg#icon-typescript"
+                          ></use>
+                        </svg>
+                        TypeScript
+                      </li>
+                      <li>
+                        <svg
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <use href="assets/icons/icons.svg#icon-html"></use>
+                        </svg>
+                        HTML5
+                      </li>
+                      <li>
+                        <svg
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <use href="assets/icons/icons.svg#icon-css"></use>
+                        </svg>
+                        CSS3
+                      </li>
+                      <li>
+                        <svg
+                          width="25"
+                          height="25"
+                          fill="currentColor"
+                          role="img"
+                          aria-hidden="true"
+                        >
+                          <use href="assets/icons/icons.svg#icon-git"></use>
+                        </svg>
+
+                        Git
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-panel" id="highlights">
+                    <ul class="highlights-list">
+                      <li>
+                        Built scalable and responsive interfaces with React.
+                      </li>
+                      <li>
+                        Translated client requirements into interactive UIs.
+                      </li>
+                      <li>Optimized performance to eliminate bottlenecks.</li>
+                      <li>Collaborated with teams using Git and GitHub.</li>
+                      <li>Integrated APIs and CMS platforms efficiently.</li>
+                    </ul>
+                  </div>
+
+                  <div class="tab-panel" id="education">
+                    <p class="date">2016 – 2021</p>
+                    <p>
+                      Bachelor's degree from Military Technical College in
+                      Egypt.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <a
+                href="/assets/files/AhmedNabel_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Ahmed_CV.pdf"
+                class="btn download"
+                >Download CV</a
+              >
+            </div>
+            <div class="image">
+              <div class="personal-image">
+                <img
+                  class="ahmed-img"
+                  src="assets/images/profile-removebg-preview-f0eedfe1.png"
+                  loading="lazy"
+                  alt="Ahmed Nabel's profile picture"
+                />
+                <div class="outline-box"></div>
+              </div>
+
+              <div class="work-links">
+                <a
+                  href="https://www.linkedin.com/in/ahmed-nabel-027717241/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="name"
+                >
+                  <svg
+                    class="icon"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/ahmed-nabel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="name"
+                >
+                  <svg
+                    class="icon"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/icons.svg#icon-github"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- About Section End -->
+
+      <!-- Portfolio Section Start -->
+
+      <section id="work">
+        <h2>My Work</h2>
+
+        <div class="container-wrapper">
+          <div class="container">
+            <div class="col col1">
+              <div class="overlay">
+                <h3>Calculator</h3>
+                <div class="skills">
+                  <strong>Skills Used:</strong> HTML, CSS, JavaScript, React
+                </div>
+                <div class="links">
+                  <a
+                    href="https://live-demo-link.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="name"
+                    aria-label="Live Demo"
+                  >
+                    <svg
+                      class="icon-work"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/icons.svg#icon-live-demo"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/ahmed-nabel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="name"
+                  >
+                    <svg
+                      class="icon-work"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/icons.svg#icon-github"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col col2">
+              <div class="overlay">
+                <h3>Car Racer</h3>
+                <div class="skills">
+                  <strong>Skills Used:</strong> HTML, CSS, JavaScript, React
+                </div>
+                <div class="links">
+                  <a
+                    href="https://live-demo-link.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="name"
+                    aria-label="Live Demo"
+                  >
+                    <svg
+                      class="icon-work"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/icons.svg#icon-live-demo"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/ahmed-nabel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="name"
+                  >
+                    <svg
+                      class="icon-work"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/icons.svg#icon-github"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col col3">
+              <div class="overlay">
+                <h3>Random Video Player</h3>
+                <div class="skills">
+                  <strong>Skills Used:</strong> HTML, CSS, JavaScript, React
+                </div>
+                <div class="links">
+                  <a
+                    href="https://live-demo-link.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="name"
+                    aria-label="Live Demo"
+                  >
+                    <svg
+                      class="icon-work"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/icons.svg#icon-live-demo"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://github.com/ahmed-nabel"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="name"
+                  >
+                    <svg
+                      class="icon-work"
+                      width="30"
+                      height="30"
+                      fill="currentColor"
+                      role="img"
+                      aria-hidden="true"
+                    >
+                      <use href="assets/icons/icons.svg#icon-github"></use>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="work.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn"
+          >View Full Work</a
+        >
+      </section>
+      <!-- Portfolio Section End -->
+
+      <!-- Contact Section Start -->
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="container-wrapper">
+          <div class="container">
+            <div class="myinfo-contact">
+              <div class="contact-item">
+                <a
+                  href="mailto:nabelahmed102@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="name"
+                >
+                  <svg
+                    class="icon"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/icons.svg#icon-mail"></use>
+                  </svg>
+                </a>
+                <span>nabelahmed102@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <a
+                  href="tel:01553729386"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="name"
+                >
+                  <svg
+                    class="icon"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/icons.svg#icon-phone"></use>
+                  </svg>
+                </a>
+                <span>(+2)01553729386</span>
+              </div>
+
+              <div class="social-media">
+                <a
+                  href="https://www.linkedin.com/in/ahmed-nabel-027717241/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="name"
+                >
+                  <svg
+                    class="icon"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    role="img"
+                    aria-hidden="true"
+                  >
+                    <use href="assets/icons/icons.svg#icon-linkedin"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="clients-contact">
+              <form class="form" target="_blank" autocomplete="off">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Your Name"
+                  required
+                  area-label="name"
+                />
+                <input
+                  type="text"
+                  name="mail"
+                  placeholder="Email Address"
+                  required
+                  area-label="email"
+                />
+                <textarea
+                  type="message"
+                  name="message"
+                  id="message"
+                  placeholder="Type Message"
+                  required
+                  area-label="message"
+                ></textarea>
+                <button class="btn">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Contact Section End -->
+    </main>
+    <!-- Main End -->
+
+    <!-- Footer Start -->
+    <footer id="footer">
+      Copyright &copy; 2025 by <span class="name">Ahmed</span> | All Rights
+      Reserved
+    </footer>
+
+    <button id="scrollToTopBtn" title="Go to top">↑</button>
+
+    <!-- Footer End -->
+  </body>
+</html>

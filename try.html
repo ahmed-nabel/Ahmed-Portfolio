@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SVG Hamburger Menu</title>
+    <style>
+      /* Reset & Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: sans-serif;
+        background-color: #f2f2f2;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #111;
+        color: white;
+        z-index: 100;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      /* SVG Hamburger */
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        z-index: 101;
+      }
+
+      .hamburger svg {
+        fill: none;
+        stroke: white;
+        stroke-width: 6;
+        stroke-linecap: round;
+        transition: all 0.3s ease;
+      }
+
+      /* Animate to X */
+      .hamburger.active .line.top {
+        transform: translateY(20px) rotate(45deg);
+      }
+      .hamburger.active .line.middle {
+        opacity: 0;
+      }
+      .hamburger.active .line.bottom {
+        transform: translateY(-20px) rotate(-45deg);
+      }
+
+      /* Nav Links */
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #f39c12;
+      }
+
+      /* Overlay */
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 99;
+        display: none;
+      }
+
+      /* Mobile Styles */
+      @media (max-width: 768px) {
+        .hamburger {
+          display: block;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          position: fixed;
+          top: 0;
+          right: -100%;
+          background: #222;
+          height: 100vh;
+          width: 250px;
+          padding-top: 60px;
+          transition: right 0.3s ease;
+          z-index: 100;
+        }
+
+        .nav-links.active {
+          right: 0;
+        }
+
+        .nav-links li {
+          text-align: center;
+          margin: 20px 0;
+        }
+
+        .overlay.active {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">MySite</div>
+
+      <!-- SVG Hamburger -->
+      <div
+        class="hamburger"
+        id="hamburger"
+        aria-label="Menu"
+        aria-expanded="false"
+      >
+        <svg width="30" height="30" viewBox="0 0 100 100">
+          <path class="line top" d="M 20,30 H 80" />
+          <path class="line middle" d="M 20,50 H 80" />
+          <path class="line bottom" d="M 20,70 H 80" />
+        </svg>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+
+      <div class="overlay" id="overlay"></div>
+    </nav>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const navLinks = document.getElementById("nav-links");
+      const overlay = document.getElementById("overlay");
+      const navItems = navLinks.querySelectorAll("a");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+        overlay.classList.toggle("active");
+      });
+
+      // Close on overlay click
+      overlay.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+
+      // Close on nav link click
+      navItems.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+          overlay.classList.remove("active");
+        });
+      });
+    </script>
+  </body>
+</html>
