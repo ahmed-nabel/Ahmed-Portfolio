@@ -787,9 +787,10 @@ footer {
 
 .hamburger span {
   height: 3px;
-  background-color: hsla(var(--main-color), 1);
+  background-color: black;
   border-radius: 2px;
   transition: 0.3s;
+  display: block;
 }
 /* Animate into "X" when active */
 .hamburger.active span:nth-child(1) {
@@ -833,7 +834,6 @@ footer {
   background: hsla(0, 0%, 13%, 0.7);
   padding: 80px 20px 20px;
   z-index: 9999;
-  pointer-events: none;
   opacity: 0;
   transform: translateX(100%);
   transition: transform 0.3s ease;
