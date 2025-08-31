@@ -593,9 +593,12 @@ section > h2 {
   cursor: pointer;
 
   border-radius: 15px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
   filter: brightness(0.75);
   overflow: hidden;
+  will-change: transform, filter;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 #work .col:hover {
