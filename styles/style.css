@@ -233,7 +233,7 @@ Black / Heavy	900
 body {
   font-family: "WorkSans-Regular", sans-serif;
   font-weight: 400;
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
   min-height: 100vh;
   background-color: hsla(var(--last-color), 1);
 }
@@ -599,6 +599,11 @@ section > h2 {
 }
 
 #work .col:hover {
+  transform: scale(1.05);
+  filter: brightness(0.5);
+}
+
+#work .col:active {
   transform: scale(1.05);
   filter: brightness(0.5);
 }
