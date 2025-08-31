@@ -693,6 +693,7 @@ section > h2 {
 textarea {
   padding: 10px;
   border: none;
+  width: 100%;
   border-bottom: 1px solid #cccccc;
   font-family: inherit;
   font-size: 1em;
