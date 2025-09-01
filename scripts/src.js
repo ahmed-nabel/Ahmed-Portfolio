@@ -90,15 +90,17 @@ window.addEventListener("scroll", () => {
   });
   // Handle header hide on scroll down and back on top again
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const isMenuOpen = sideMenu.classList.contains("open"); // adjust selector
 
-  if (scrollTop > lastScrollTop) {
-    // scrolling down
-    header.classList.add("hide");
-  } else {
-    // scrolling up
-    header.classList.remove("hide");
+  if (!isMenuOpen) {
+    if (scrollTop > lastScrollTop) {
+      // scrolling down
+      header.classList.add("hide");
+    } else {
+      // scrolling up
+      header.classList.remove("hide");
+    }
   }
-
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
@@ -156,8 +158,6 @@ hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("active");
   sideMenu.classList.toggle("open");
 });
-
-closeBtn.addEventListener("click", closeMenu);
 
 // Optional: close menu when a nav link is clicked
 links.forEach((link) => {

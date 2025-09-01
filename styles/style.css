@@ -399,7 +399,8 @@ section > h2 {
 }
 
 #header.hide {
-  top: -100px; /* hide off screen */
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
 }
 
 @container (min-width: 960px) {
@@ -431,6 +432,10 @@ section > h2 {
 /* End header */
 
 /* start  About */
+
+#about {
+  background-color: hsla(var(--section-color), 1);
+}
 
 #about .container {
   display: flex;
@@ -659,7 +664,9 @@ section > h2 {
 /* End services & portfolio */
 
 /* Start Contact */
-
+#contact {
+  background-color: hsla(var(--section-color), 1);
+}
 #contact .container {
   display: flex;
   flex-direction: column;
@@ -695,6 +702,8 @@ textarea {
   border: none;
   width: 100%;
   border-bottom: 1px solid #cccccc;
+  color: hsla(var(--main-color), 1);
+  background-color: hsla(var(--last-color), 1);
   font-family: inherit;
   font-size: 1em;
 }
@@ -800,6 +809,7 @@ footer {
 /* Animate into "X" when active */
 .hamburger.active span:nth-child(1) {
   transform: translateY(9px) rotate(45deg);
+  background-color: white;
 }
 
 .hamburger.active span:nth-child(2) {
@@ -808,6 +818,7 @@ footer {
 
 .hamburger.active span:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
+  background-color: white;
 }
 
 /* Close button (mobile only) */
@@ -836,7 +847,7 @@ footer {
   right: 0;
   width: 250px;
   height: 100vh;
-  background: hsla(0, 0%, 13%, 0.7);
+  background: hsla(var(--darkmode-color), 1);
   padding: 80px 20px 20px;
   z-index: 1000;
   opacity: 0;
@@ -943,14 +954,16 @@ footer {
 
 /* Dark theme */
 [data-theme="dark"] {
-  --last-color: 216, 49%, 15%;
+  --last-color: 240, 100%, 5%;
   --main-color: 0, 0%, 100%;
+  --section-color: 216, 49%, 15%;
 }
 
 /* Respect system preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --last-color: 216, 49%, 15%;
+    --last-color: 240, 100%, 5%;
     --main-color: 0, 0%, 100%;
+    --section-color: 216, 49%, 15%;
   }
 }
