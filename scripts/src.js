@@ -12,7 +12,6 @@ const tabs = document.querySelectorAll(".tab");
 const panels = document.querySelectorAll(".tab-panel");
 const contactBtns = document.querySelectorAll(".contact");
 const contactLink = document.getElementById("contactBtn");
-const btn = document.getElementById("scrollToTopBtn");
 const hamburgerBtn = document.getElementById("hamburgerBtn");
 const closeBtn = document.getElementById("closeBtn");
 const sideMenu = document.getElementById("sideMenu");
@@ -133,22 +132,6 @@ contactBtns.forEach((button) => {
   });
 });
 
-window.onscroll = function () {
-  if (
-    document.body.scrollTop > 200 ||
-    document.documentElement.scrollTop > 200
-  ) {
-    btn.classList.add("show");
-  } else {
-    btn.classList.remove("show");
-  }
-};
-
-btn.onclick = function () {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-  navLinks.forEach((l) => l.classList.remove("active"));
-};
-
 function closeMenu() {
   sideMenu.classList.remove("open");
   hamburgerBtn.classList.remove("active");
@@ -194,29 +177,33 @@ form.addEventListener("submit", (e) => {
 // form.addEventListener("input", handleInputValues);
 
 const toggleBtn = document.getElementById("theme-toggle");
-const themeIcon = document.getElementById("theme-icon");
+const sunIcon = document.getElementById("icon-sun");
+const moonIcon = document.getElementById("icon-moon");
 
-// Load saved theme or fallback to system preference
-let savedTheme = localStorage.getItem("theme");
+function applyTheme(theme) {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
 
-if (savedTheme) {
-  document.documentElement.setAttribute("data-theme", savedTheme);
-  themeIcon.textContent = savedTheme === "dark" ? "🌞" : "🌙";
-} else {
-  let prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  document.documentElement.setAttribute(
-    "data-theme",
-    prefersDark ? "dark" : "light"
-  );
-  themeIcon.textContent = prefersDark ? "🌞" : "🌙";
+  if (theme === "dark") {
+    sunIcon.style.display = "inline";
+    moonIcon.style.display = "none";
+  } else {
+    sunIcon.style.display = "none";
+    moonIcon.style.display = "inline";
+  }
 }
 
-// Toggle theme
-toggleBtn.addEventListener("click", () => {
-  let current = document.documentElement.getAttribute("data-theme");
-  let newTheme = current === "dark" ? "light" : "dark";
+// Init theme from localStorage or system
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme) {
+  applyTheme(savedTheme);
+} else {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  applyTheme(prefersDark ? "dark" : "light");
+}
 
-  document.documentElement.setAttribute("data-theme", newTheme);
-  localStorage.setItem("theme", newTheme);
-  themeIcon.textContent = newTheme === "dark" ? "🌞" : "🌙";
+// Toggle on click
+toggleBtn.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
 });
