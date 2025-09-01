@@ -368,7 +368,7 @@ section > h2 {
   gap: 50px;
   align-items: center;
   justify-content: center;
-  margin-block-start: 15em;
+  margin-block-start: 10em;
 }
 
 #landing h1 {
@@ -380,6 +380,16 @@ section > h2 {
   transform: scale(0.5);
   animation: popIn 0.8s ease-out forwards;
   animation-delay: 0.5s;
+}
+
+.landing-media {
+  visibility: visible;
+}
+
+@media (min-width: 1024px) {
+  .landing-media {
+    visibility: hidden;
+  }
 }
 
 /* End Landing */
