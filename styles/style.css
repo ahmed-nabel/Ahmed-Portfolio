@@ -940,10 +940,6 @@ footer {
   height: 40px;
 }
 
-.theme-toggle:hover {
-  transform: scale(1.2);
-}
-
 #theme-icon {
   color: white;
 }
