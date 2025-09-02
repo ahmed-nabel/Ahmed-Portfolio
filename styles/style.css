@@ -957,7 +957,7 @@ footer {
 
 /* Respect system preference */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --last-color: 240, 100%, 5%;
     --main-color: 0, 0%, 100%;
     --section-color: 240, 100%, 6%;
